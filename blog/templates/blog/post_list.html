@@ -3,20 +3,15 @@
         <title>Django Girls blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">RIO Blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 04/08/2020</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>test</p>
-            <h2><a href="">Il mio secondo postt</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+    <div>
+        <h1><a href="/">Rio blog</a></h1>
+    </div>
+    {% for post in posts %}
+    <div>
+    <p>published:{{post.published_date}}</p>
+     <h2>{{post.title}}</h2>
+     <p>{{post.text|linebreaksbr}}</p>
+    </div>
+    {% endfor %}
     </body>
 </html>
